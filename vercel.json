@@ -1,0 +1,23 @@
+{
+  "regions": ["icn"],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "X-Powered-By": "HGSEO"
+      },
+      "dest": "/$1",
+      "continue": true
+    },
+    {
+      "src": "/app/(?<version>[^/]+)(/*)",
+      "dest": "/api/index?version=$version"
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/404.json"
+    }
+  ]
+}
