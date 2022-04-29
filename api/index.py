@@ -21,7 +21,7 @@ import pytz as pytz
 
 
 SUPPORTED_API_VERSIONS = ["v2", "v3", "v4"]
-CACHE_AGE = 600
+CACHE_AGE = 1800  # 30분
 
 try:
     NEIS_OPENAPI_TOKEN = os.environ["NEIS_OPENAPI_TOKEN"]  # NEUS 오픈API 인증 토큰
