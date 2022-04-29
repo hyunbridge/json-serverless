@@ -5,6 +5,7 @@
       "src": "/(.*)",
       "headers": {
         "Access-Control-Allow-Origin": "*",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
         "X-Powered-By": "HGSEO"
       },
       "dest": "/$1",
