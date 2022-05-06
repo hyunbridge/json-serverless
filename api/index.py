@@ -213,8 +213,8 @@ class handler(BaseHTTPRequestHandler):
         query = dict(urllib.parse.parse_qsl(urllib.parse.urlsplit(s).query))
         version = query.get("version", "")
         if version not in SUPPORTED_API_VERSIONS:
-            self.send_response(200)
-            self.send_header("Content-type", "application/json")
+            self.send_response(404)
+            self.send_header("Content-type", "application/json; charset=utf-8")
             self.end_headers()
             self.wfile.write(
                 json.dumps({"status": 404, "message": "Not Found"}, indent=4).encode(
